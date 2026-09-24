@@ -1,0 +1,206 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  slug             String   @unique
+  shortDescription String?
+  description      String?
+  image            String?
+  icon             String?
+  sortOrder        Int      @default(0)
+  isPublished      Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  courses Course[]
+
+  @@map("programs")
+}
+
+model Course {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  categoryId       String   @db.ObjectId
+  title            String
+  slug             String   @unique
+  tagline          String?
+  shortDescription String?
+  description      String?
+  badge            String?
+  level            String?
+  icon             String?
+  image            String?
+  outcomes         String[]
+  curriculum       String[]
+  duration         String?
+  sessionsPerWeek  String?
+  ageRange         String?
+  format           String?
+  price            String?
+  sortOrder        Int      @default(0)
+  isPublished      Boolean  @default(false)
+  pinOnHome        Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  category   Category    @relation(fields: [categoryId], references: [id])
+  admissions Admission[]
+
+  @@map("courses")
+}
+
+model Student {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  phone         String
+  email         String?
+  dateOfBirth   String?
+  age           Int?
+  gender        String?
+  guardianName  String?
+  guardianPhone String?
+  address       String?
+  country       String?
+  notes         String?
+  status        String   @default("ACTIVE")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  admissions Admission[]
+
+  @@map("students")
+}
+
+model Admission {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  studentId     String   @db.ObjectId
+  courseId      String?  @db.ObjectId
+  categoryId    String?  @db.ObjectId
+  preferredTime String?
+  status        String   @default("PENDING")
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  student Student @relation(fields: [studentId], references: [id])
+  course  Course? @relation(fields: [courseId], references: [id])
+
+  @@map("admissions")
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// === New models for dynamic site data ===
+
+model SiteSettings {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  nameLatin     String?
+  tagline       String?
+  description   String?
+  phone         String?
+  whatsapp      String?
+  email         String?
+  address       String?
+  facebook      String?
+  youtube       String?
+  heroArabicText String?
+  admissionOpen Boolean  @default(false)
+  logo          String? // Cloudinary URL
+  logoNav       String? // Cloudinary URL
+  logoHero      String? // Legacy field, retained for compatibility
+  heroImage     String? // Cloudinary URL or local image path
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Teacher {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  subject    String
+  image      String? // Cloudinary URL or local image path
+  experience String?
+  bio        String?
+  grad       String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model GalleryItem {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  alt       String
+  url       String // Cloudinary URL
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Video {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  category    String?
+  description String?
+  youtubeId   String // YouTube video ID
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  quote     String
+  name      String
+  relation  String?
+  image     String? // Cloudinary URL or local image path
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Stat {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  label     String
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Feature {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  icon        String? // Lucide icon name (e.g., "Route", "MonitorPlay")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdmissionStep {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  step        String // e.g., "০১"
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model FAQ {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  question  String
+  answer    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
