@@ -48,7 +48,7 @@ export default async function AboutPage() {
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-grey">
               <p>
-                <p className="text-gold">আমাদের মিশন</p>
+                <p className="text-gold text-bold">আমাদের মিশন</p>
 ইলমোরা ইনস্টিটিউটের লক্ষ্য হলো সহজ, আনন্দময় ও মানসম্মত শিক্ষাকে সবার কাছে সহজলভ্য করে তোলা। প্রযুক্তির আধুনিক ব্যবহারের মাধ্যমে আমরা এমন একটি শিক্ষাব্যবস্থা গড়ে তুলতে চাই, যেখানে শিক্ষার্থীরা শিখবে, বুঝবে এবং অর্জিত জ্ঞান বাস্তব জীবনে প্রয়োগ করতে পারবে।
               </p>
               <p>
