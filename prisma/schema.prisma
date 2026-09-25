@@ -121,6 +121,8 @@ model SiteSettings {
   address       String?
   facebook      String?
   youtube       String?
+  linkedin      String?
+  x             String?
   heroArabicText String?
   admissionOpen Boolean  @default(false)
   logo          String? // Cloudinary URL

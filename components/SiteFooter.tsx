@@ -30,6 +30,22 @@ function YoutubeIcon() {
   );
 }
 
+function LinkedinIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M5.2 3.5A2.2 2.2 0 1 1 .8 3.5a2.2 2.2 0 0 1 4.4 0ZM1.1 8.4h4.2V23H1.1V8.4Zm7.1 0h4v2h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V23h-4.2v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V23H8.2V8.4Z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2H8l4.4 5.8L18.9 2Zm-1.1 17.8h1.7L7.1 4.1H5.2l12.6 15.7Z" />
+    </svg>
+  );
+}
+
 // Props come from the public layout (loaded from DB via getSiteInfo)
 export default function SiteFooter({
   site,
@@ -116,25 +132,51 @@ export default function SiteFooter({
                 {site.address}
               </li>
             </ul>
-            <div className="mt-6 flex gap-3">
-              <a
-                href={site.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
-                aria-label="ফেসবুক"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href={site.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
-                aria-label="ইউটিউব"
-              >
-                <YoutubeIcon />
-              </a>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {site.facebook && (
+                <a
+                  href={site.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon />
+                </a>
+              )}
+              {site.youtube && (
+                <a
+                  href={site.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
+                  aria-label="YouTube"
+                >
+                  <YoutubeIcon />
+                </a>
+              )}
+              {site.linkedin && (
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon />
+                </a>
+              )}
+              {site.x && (
+                <a
+                  href={site.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#9aa6bd] transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-[#1c1400]"
+                  aria-label="X"
+                >
+                  <XIcon />
+                </a>
+              )}
             </div>
           </div>
         </div>

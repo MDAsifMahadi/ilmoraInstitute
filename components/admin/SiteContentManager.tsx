@@ -45,6 +45,8 @@ interface SiteSettingsData {
   address: string | null;
   facebook: string | null;
   youtube: string | null;
+  linkedin: string | null;
+  x: string | null;
   heroArabicText: string | null;
   admissionOpen: boolean;
   logo: string | null;
@@ -345,6 +347,8 @@ export default function SiteContentManager({
       address: (form.get("address") as string) || null,
       facebook: (form.get("facebook") as string) || null,
       youtube: (form.get("youtube") as string) || null,
+      linkedin: (form.get("linkedin") as string) || null,
+      x: (form.get("x") as string) || null,
       heroArabicText: (form.get("heroArabicText") as string) || null,
       admissionOpen: form.get("admissionOpen") === "on",
       logo: (form.get("logo") as string) || null,
@@ -597,6 +601,30 @@ export default function SiteContentManager({
                     name="youtube"
                     defaultValue={settingsValue.youtube || ""}
                     placeholder="https://youtube.com/@..."
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="linkedin" className={labelClass}>
+                    LinkedIn URL
+                  </label>
+                  <input
+                    id="linkedin"
+                    name="linkedin"
+                    defaultValue={settingsValue.linkedin || ""}
+                    placeholder="https://linkedin.com/company/..."
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="x" className={labelClass}>
+                    X (Twitter) URL
+                  </label>
+                  <input
+                    id="x"
+                    name="x"
+                    defaultValue={settingsValue.x || ""}
+                    placeholder="https://x.com/..."
                     className={inputClass}
                   />
                 </div>

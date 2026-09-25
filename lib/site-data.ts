@@ -23,6 +23,8 @@ function normalizeSiteSettings(settings: {
   address: string | null;
   facebook: string | null;
   youtube: string | null;
+  linkedin: string | null;
+  x: string | null;
   heroArabicText: string | null;
   admissionOpen: boolean;
   logo: string | null;
@@ -59,6 +61,8 @@ function normalizeSiteSettings(settings: {
       address: settings.address || FALLBACK_SITE_DATA.SITE.address,
       facebook: settings.facebook || FALLBACK_SITE_DATA.SITE.facebook,
       youtube: settings.youtube || FALLBACK_SITE_DATA.SITE.youtube,
+      linkedin: settings.linkedin || FALLBACK_SITE_DATA.SITE.linkedin,
+      x: settings.x || FALLBACK_SITE_DATA.SITE.x,
       heroArabicText:
         settings.heroArabicText || FALLBACK_SITE_DATA.SITE.heroArabicText,
       admissionOpen: settings.admissionOpen,

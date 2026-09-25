@@ -13,6 +13,8 @@ export type SiteInfo = {
   address: string;
   facebook: string;
   youtube: string;
+  linkedin: string;
+  x: string;
   heroArabicText: string;
   admissionOpen: boolean;
 };
@@ -99,6 +101,8 @@ export const SITE: SiteInfo = {
   address: "ঢাকা, বাংলাদেশ",
   facebook: "https://facebook.com/ilmurainstitute",
   youtube: "https://youtube.com/@ilmurainstitute",
+  linkedin: "",
+  x: "",
   heroArabicText: "اقرأ بسم ربك الذي خلق",
   admissionOpen: true,
 };

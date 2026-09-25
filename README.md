@@ -48,7 +48,7 @@ The seed is intentionally non-destructive: existing site-content collections and
 
 All eight Site Content collections support authenticated create, edit, and delete operations. Image fields accept only managed local paths or Cloudinary URLs; invalid URLs, unknown fields, malformed JSON, and invalid required values return a client error instead of a Prisma 500. Removing an image or deleting its record also performs best-effort Cloudinary cleanup, and abandoning an uncommitted upload cleans up the pending asset.
 
-The hero Arabic line is editable from **Admin → Site Content → Settings → Hero Arabic Line**. The value is stored in MongoDB and rendered on the homepage.
+The hero Arabic line and social links are editable from **Admin → Site Content → Settings**. Social links include Facebook, YouTube, LinkedIn, and X/Twitter; empty links are hidden automatically. The values are stored in MongoDB and rendered in the footer/contact page.
 
 ## Teacher and testimonial image uploads
 

@@ -87,6 +87,28 @@ export default async function ContactPage() {
                   <YoutubeIcon />
                   YouTube
                 </a>
+                {SITE.linkedin && (
+                  <a
+                    href={SITE.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold px-5 py-2.5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-ink"
+                  >
+                    <LinkedinIcon />
+                    LinkedIn
+                  </a>
+                )}
+                {SITE.x && (
+                  <a
+                    href={SITE.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold px-5 py-2.5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-ink"
+                  >
+                    <XIcon />
+                    X
+                  </a>
+                )}
                 {SITE.whatsapp && (
                   <a
                     href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`}
@@ -121,6 +143,22 @@ function YoutubeIcon() {
   return (
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M5.2 3.5A2.2 2.2 0 1 1 .8 3.5a2.2 2.2 0 0 1 4.4 0ZM1.1 8.4h4.2V23H1.1V8.4Zm7.1 0h4v2h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V23h-4.2v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V23H8.2V8.4Z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2H8l4.4 5.8L18.9 2Zm-1.1 17.8h1.7L7.1 4.1H5.2l12.6 15.7Z" />
     </svg>
   );
 }
