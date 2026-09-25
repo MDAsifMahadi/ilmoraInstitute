@@ -14,8 +14,8 @@ function getWhatsAppDigits(phone: string): string | null {
 function WhatsAppIcon() {
   return (
     <svg
-      width="25"
-      height="25"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"
@@ -39,15 +39,9 @@ export default function WhatsAppButton({ phone }: { phone: string }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="হোয়াটসঅ্যাপে মেসেজ করুন"
-      title="হোয়াটসঅ্যাপে মেসেজ করুন"
-      className="group fixed bottom-4 right-4 z-50 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#25D366] px-3.5 text-white shadow-[0_10px_30px_rgba(37,211,102,0.35)] transition-all duration-200 hover:-translate-y-1 hover:bg-[#1eb455] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-200 sm:bottom-6 sm:right-6 sm:px-5"
+      className="group fixed bottom-4 right-4 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.35)] transition-all duration-200 hover:-translate-y-1 hover:bg-[#1eb455] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-200 sm:bottom-6 sm:right-6"
     >
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
-        <WhatsAppIcon />
-      </span>
-      <span className="hidden whitespace-nowrap text-sm font-bold sm:inline">
-        হোয়াটসঅ্যাপে লিখুন
-      </span>
+      <WhatsAppIcon />
     </a>
   );
 }
