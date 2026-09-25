@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hind_Siliguri, Poppins, Amiri } from "next/font/google";
 import "./globals.css";
 import { getSiteInfo } from "@/lib/site-data";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const hindSiliguri = Hind_Siliguri({
   variable: "--font-hind-siliguri",
@@ -23,6 +24,8 @@ const amiri = Amiri({
   subsets: ["latin", "arabic"],
   display: "swap",
 });
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { SITE } = await getSiteInfo();
@@ -52,7 +55,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const { SITE } = await getSiteInfo();
+
   return (
     <html
       lang="bn"
@@ -60,6 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         {children}
+        <WhatsAppButton phone={SITE.whatsapp} />
       </body>
     </html>
   );

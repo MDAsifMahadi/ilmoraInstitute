@@ -43,6 +43,7 @@
 
 ## ✅ যাচাই সম্পন্ন (২০২৬-০৯-২৫)
 - [x] Social links: Facebook, YouTube, LinkedIn এবং X/Twitter settings/API/admin থেকে editable; footer ও contact page-এ dynamic
+- [x] Floating WhatsApp button: root layout-এ global; dynamic Site Content number থেকে `wa.me` link, valid phone না থাকলে hidden
 - [x] Hero image: `/admin/site` Settings থেকে Cloudinary upload/preview/remove; homepage DB-driven, default `/site/new-journey.jpg`
 - [x] Hero Arabic line (`اقرأ بسم ربك الذي خلق`) Prisma, admin, API, fallback এবং homepage-এ DB-driven
 - [x] Site Content-এর ৮টি collection-এর temporary CRUD audit: create/patch/delete/count restore সব সফল

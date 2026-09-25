@@ -50,6 +50,8 @@ All eight Site Content collections support authenticated create, edit, and delet
 
 The hero Arabic line and social links are editable from **Admin → Site Content → Settings**. Social links include Facebook, YouTube, LinkedIn, and X/Twitter; empty links are hidden automatically. The values are stored in MongoDB and rendered in the footer/contact page.
 
+A floating WhatsApp button is rendered globally from the Site Content **WhatsApp** number. It appears on public pages, admin pages, and the login page when a valid 8–15 digit phone number is configured; placeholder values remain hidden.
+
 ## Teacher and testimonial image uploads
 
 Teacher photos are managed from **Admin → Site Content → Teachers**. Student and guardian photos are managed from **Admin → Site Content → Testimonials**. Uploads require all three Cloudinary variables in `.env`:
