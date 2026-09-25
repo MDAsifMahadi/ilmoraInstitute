@@ -76,7 +76,7 @@ export default async function ContactPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-[#1c1400] transition-transform hover:-translate-y-0.5 hover:bg-gold-dark"
                 >
                   <FacebookIcon />
-                  Facebook
+                  {/* Facebook */}
                 </a>
                 <a
                   href={SITE.youtube}
@@ -85,7 +85,7 @@ export default async function ContactPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold px-5 py-2.5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-ink"
                 >
                   <YoutubeIcon />
-                  YouTube
+                  {/* YouTube */}
                 </a>
                 {SITE.linkedin && (
                   <a
@@ -95,7 +95,7 @@ export default async function ContactPage() {
                     className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold px-5 py-2.5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-ink"
                   >
                     <LinkedinIcon />
-                    LinkedIn
+                    {/* LinkedIn */}
                   </a>
                 )}
                 {SITE.x && (
@@ -106,7 +106,7 @@ export default async function ContactPage() {
                     className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold px-5 py-2.5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-ink"
                   >
                     <XIcon />
-                    X
+                    {/* X */}
                   </a>
                 )}
                 {SITE.whatsapp && (
