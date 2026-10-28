@@ -57,9 +57,9 @@ export default function SiteFooter({
   return (
     <footer className="bg-navy text-[#cfd6e4]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div className="col-span-2 space-y-4 text-center lg:col-span-1 lg:text-left">
+            <div className="flex items-center justify-center gap-3 lg:justify-start">
               <Image
                 src={logoNav}
                 alt={`${site.name} লোগো`}
@@ -76,10 +76,7 @@ export default function SiteFooter({
                 </span>
               </span>
             </div>
-            <p className="font-serif text-xl text-gold/90" dir="ltr" lang="ar">
-              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-            </p>
-            <p className="max-w-sm text-sm leading-relaxed text-[#9aa6bd]">
+            <p className="mx-auto max-w-sm text-sm leading-relaxed text-[#9aa6bd] lg:mx-0">
               Knowledge that connects —{" "}
               <span className="font-serif" dir="ltr" lang="ar">
                 العلم الذي يربط
@@ -114,7 +111,7 @@ export default function SiteFooter({
             <FooterCourseLinks />
           </div>
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h3 className="mb-5 text-xs font-bold uppercase tracking-[2px] text-white">
               যোগাযোগ
             </h3>
