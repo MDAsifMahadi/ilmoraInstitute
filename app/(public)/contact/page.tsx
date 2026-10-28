@@ -68,7 +68,7 @@ export default async function ContactPage() {
               <p className="mt-2 text-sm leading-relaxed text-white/80">
                 নিয়মিত আপডেট, ভিডিও ও কার্যক্রমের খবর পেতে ফলো করুন।
               </p>
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex flex-wrap items-center gap-3">
                 <a
                   href={SITE.facebook}
                   target="_blank"
